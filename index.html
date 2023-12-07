@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Github User Display</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+  </head>
+  <body>
+    <h1>Github User Search</h1>
+    <div id="search">
+      <input
+        id="search-input"
+        type="text"
+      />
+      <button id="search-button">Search</button>
+    </div>
+    <section
+      id="user-info"
+      class="main"
+    >
+      <img
+        id="avatar"
+        alt="avatar"
+        src="https://avatars.githubusercontent.com/u/106685702?v=4"
+      />
+      <h1 id="login">user login</h1>
+      <h3 id="name">user name</h3>
+      <a
+        id="user-link"
+        href="https://github.com/user"
+        ><p id="user-url">https://github.com/user</p></a
+      >
+      <div class="text-group">
+        <div>
+          <h3>Joined:</h3>
+          <p id="joined">January 1,1900</p>
+        </div>
+      </div>
+      <div class="text-group">
+        <a
+          id="followers-link"
+          href="#"
+        >
+          <h3>Followers</h3>
+          <p id="follower-count">00</p>
+        </a>
+        <a
+          id="following-link"
+          href="#"
+        >
+          <h3>Following</h3>
+          <p id="following-count">00</p>
+        </a>
+      </div>
+      <div class="text-group">
+        <a
+          id="repo-link"
+          href="#"
+        >
+          <h3>Repositories</h3>
+          <p id="repo-count">00</p>
+        </a>
+      </div>
+    </section>
+    <section
+      id="user-error"
+      class="main"
+    >
+      <h1>No User Found ☹️</h1>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
