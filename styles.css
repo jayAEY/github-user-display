@@ -48,6 +48,8 @@ body {
 
 p {
   color: blueviolet;
+  max-width: 300px;
+  text-align: center;
 }
 
 #avatar {
@@ -60,7 +62,7 @@ p {
 }
 
 #user-link {
-  margin-top: -20px;
+  margin-top: -18px;
 }
 
 a,

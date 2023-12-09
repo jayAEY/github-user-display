@@ -18,6 +18,8 @@
       <input
         id="search-input"
         type="text"
+        autofocus
+        required
       />
       <button id="search-button">Search</button>
     </div>
@@ -35,12 +37,19 @@
       <a
         id="user-link"
         href="https://github.com/user"
-        ><p id="user-url">https://github.com/user</p></a
+        ><p id="user-url">https://github.com/userurl</p></a
       >
       <div class="text-group">
         <div>
           <h3>Joined:</h3>
-          <p id="joined">January 1,1900</p>
+          <p id="joined">--</p>
+        </div>
+      </div>
+      <div class="text-group">
+        <div>
+          <h3>Bio:</h3>
+          <p id="bio">--</p>
+        </div>
         </div>
       </div>
       <div class="text-group">
@@ -49,14 +58,14 @@
           href="#"
         >
           <h3>Followers</h3>
-          <p id="follower-count">00</p>
+          <p id="follower-count">--</p>
         </a>
         <a
           id="following-link"
           href="#"
         >
           <h3>Following</h3>
-          <p id="following-count">00</p>
+          <p id="following-count">--</p>
         </a>
       </div>
       <div class="text-group">
@@ -65,16 +74,18 @@
           href="#"
         >
           <h3>Repositories</h3>
-          <p id="repo-count">00</p>
+          <p id="repo-count">--</p>
         </a>
       </div>
     </section>
+
     <section
       id="user-error"
       class="main"
     >
       <h1>No User Found ☹️</h1>
     </section>
+
     <script src="script.js"></script>
   </body>
 </html>

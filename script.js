@@ -12,6 +12,7 @@ let userLink = document.querySelector("#user-link");
 let userUrl = document.querySelector("#user-url");
 
 let joinDate = document.querySelector("#joined");
+let bio = document.querySelector("#bio");
 
 let followers = document.querySelector("#follower-count");
 let followersLink = document.querySelector("#followers-link");
@@ -21,31 +22,22 @@ let followingLink = document.querySelector("#following-link");
 let repoCount = document.querySelector("#repo-count");
 let repoLink = document.querySelector("#repo-link");
 
-let test = {
-  avatar_url: "https://avatars.githubusercontent.com/u/106685702?v=4",
-  login: "github",
-  name: "github",
-  html_url: "jhouh",
-  html_url: "ohiuh",
-  created_at: "yesterday",
-  followers: "ouygouyg",
-  followers_url: "ktfu",
-  following: "uigyug",
-  following_url: "hoh",
-  public_repos: "ljn",
-};
-
 const fetchData = async (user) => {
   try {
     const data = await fetch(`https://api.github.com/users/${user}`);
     let result = await data.json();
-    // let result = test;
+    if (result.message == "Not Found") {
+      userInfo.style.display = "none";
+      userError.style.display = "flex";
+    }
+    let date = new Date(result.created_at).toDateString().slice(3);
     avatar.src = result.avatar_url;
     login.innerText = result.login;
     username.innerText = result.name;
     userLink.href = result.html_url;
     userUrl.innerText = result.html_url;
-    joinDate.innerText = result.created_at;
+    joinDate.innerText = date;
+    bio.innerText = result.bio ? result.bio : "--";
     followers.innerText = result.followers;
     followersLink.href = result.followers_url;
     following.innerText = result.following;
@@ -57,18 +49,15 @@ const fetchData = async (user) => {
   }
 };
 
-// fetchData(userSearch);
-
 function updateSearch(search) {
-  if (!search) {
-    userInfo.style.display = "none";
-    userError.style.display = "flex";
-  } else {
-    userInfo.style.display = "flex";
-    userError.style.display = "none";
-    userSearch = search;
-    fetchData(userSearch);
-  }
+  userInfo.style.display = "flex";
+  userError.style.display = "none";
+  userSearch = search;
+  fetchData(userSearch);
 }
 
 searchButton.addEventListener("click", () => updateSearch(searchInput.value));
+searchInput.addEventListener(
+  "keypress",
+  (e) => e.key === "Enter" && updateSearch(searchInput.value)
+);
