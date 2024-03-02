@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
 *,
 *::before,
 *::after {
@@ -18,7 +20,7 @@ body {
   justify-content: center;
   background-color: rgb(8, 11, 53);
   color: rgb(219, 190, 45);
-  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 #search-input {
@@ -46,10 +48,19 @@ body {
   display: none;
 }
 
+h1 {
+  font-weight: 900;
+}
+
+h3 {
+  font-weight: 800;
+}
+
 p {
   color: blueviolet;
   max-width: 300px;
   text-align: center;
+  font-weight: 100;
 }
 
 #avatar {
