@@ -52,7 +52,15 @@ body {
 }
 
 h1 {
+  font-size: xx-large;
   font-weight: 900;
+}
+
+h2 {
+  margin-top: -10px;
+  color: aquamarine;
+  font-weight: 500;
+  font-size: medium;
 }
 
 h3 {
@@ -76,7 +84,7 @@ p {
 }
 
 #user-link {
-  /* margin-top: -10px; */
+  margin-top: -10px;
 }
 
 a,
